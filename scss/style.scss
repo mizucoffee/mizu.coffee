@@ -54,4 +54,10 @@ h1 {
     text-align:center;
     display: block;
   }
+  &:hover {
+    color: #7a614f;
+    @media screen and (max-width: 768px) {
+      color: #fff;
+    }
+  }
 }
