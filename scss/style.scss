@@ -121,7 +121,7 @@ h2 {
   display: block;
   margin: 0 auto;
   width: 192px;
-  padding-top: calc((100vh - 192px - 48px) / 2);
+  padding-top: calc((100vh - 192px - 48px - 48px) / 2);
 }
 
 .name {
