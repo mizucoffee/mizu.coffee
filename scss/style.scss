@@ -14,41 +14,150 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  height: 200vh;
+  overflow: hidden;
+  animation: {
+    name: expansion;
+    duration: 2s;
+    delay: 3.5s;
+    fill-mode: forwards;
+  }
+}
+
+main {
+  height: 200vh;
+  background: linear-gradient(180deg, #2BC0E4, #EAECC6);
+}
+
+@keyframes expansion {
+  from {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  to {
+    max-height: 200vh;
+    overflow: visible;
+  }
+}
+
 a {
   text-decoration: none;
   color: #000;
   display: block;
 }
 
-body {
-  background: linear-gradient(180deg, #2BC0E4, #EAECC6);
+@keyframes opacity {
+  0% {
+    pointer-events: none;
+    opacity: 0;
+  }
+  1% {
+    pointer-events: auto;
+    opacity: 0;
+  }
+  100% {
+    pointer-events: auto;
+    opacity: 1;
+  }
 }
 
 .top {
   height: 100vh;
+
+  img {
+    position: absolute;
+    top: calc(50vh - 256px);
+    left: calc(50vw - 256px);
+    width: 512px;
+    opacity: 0;
+    animation: {
+      name: opacity;
+      duration: 2s;
+      delay: 3.5s;
+      fill-mode: forwards;
+    }
+  }
+  #mzcf {
+    position: absolute;
+    transform: scale(1.5);
+    top: calc(50vh - 80px);
+    left: calc(50vw - 256px);
+    width: 512px;
+    display: block;
+    animation: {
+      name: rotate;
+      duration: 2s;
+      delay: 3.5s;
+      fill-mode: forwards;
+    }
+    path{
+      stroke-dasharray: 2100;
+      stroke-dashoffset: 2100;
+      stroke: #321911;
+      stroke-width: 2px;
+      animation: {
+        name: stroke;
+        duration: 5s;
+        delay: 1s;
+        fill-mode: forwards;
+        timing-function: ease-in-out;
+      }
+    }
+  }
+  .scroll {
+    position: absolute;
+    top: calc(80vh - 80px);
+    left: calc(50vw - 80px);
+    height: 160px;
+    width: 160px;
+    border: 1px white solid;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: opacity, 2s  ease  3.5s  1 normal forwards opacity , 2s ease-in-out 5.5s infinite alternate blink;
+    svg {
+      display: block;
+      width: 128px;
+      margin: 16px;
+    }
+  }
 }
 
-.scroll {
-  margin-top: 15vh;
-  text-align: center;
-  font-size: 32px;
-  line-height: 1em;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: blink;
-  animation-direction: alternate;
-  animation-timing-function: linear;
-  color: #FFF;
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(0px) scale(1.5);
+  }
+  to {
+    transform: rotate(-7deg) translate(95px,210px) scale(0.7);
+  }
+}
+
+@keyframes stroke {
+  10% {
+    fill: transparent;
+  }
+  50% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+  80% {
+    fill: #321911;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: #321911;
+    stroke-dashoffset: 0;
+  }
+}
+
+.bottom {
+  padding: calc((100vh - 687px - 32px) / 2) 0;
 }
 
 @keyframes blink {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0.3;
-  }
+  from { opacity: 1; }
+  to { opacity: 0.3; }
 }
 
 h2 {
@@ -120,8 +229,8 @@ h2 {
 .icon {
   display: block;
   margin: 0 auto;
-  width: 192px;
-  padding-top: calc((100vh - 192px - 48px - 48px) / 2);
+  width: 30vh;
+  padding-top: calc((100vh - 30vh - 48px - 48px) / 2);
 }
 
 .name {
@@ -147,14 +256,81 @@ svg {
   fill: #000;
 }
 
-footer {
-  line-height: 1em;
-  padding: 4px 0;
-  text-align: center;
-  width: 100%;
-  background-color: #2BC0E4;
-  color: #FFFFFF;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+
+@media screen and (max-width: 768px) {
+  main {
+    height: initial;
+    min-height: 200vh;
+  }
+  .top {
+    height: 100vh;
+
+    img {
+      position: absolute;
+      top: calc(10vh);
+      left: calc(50vw - 35vw);
+      width: 70vw;
+      opacity: 0;
+      animation: {
+        name: opacity;
+        duration: 2s;
+        delay: 3.5s;
+        fill-mode: forwards;
+      }
+    }
+    #mzcf {
+      position: absolute;
+      transform: scale(1.5);
+      top: calc(50vh - 25vw);
+      left: calc(50vw - 30vw);
+      width: 60vw;
+      display: block;
+      animation: {
+        name: rotate;
+        duration: 2s;
+        delay: 3.5s;
+        fill-mode: forwards;
+      }
+      path{
+        stroke-dasharray: 2100;
+        stroke-dashoffset: 2100;
+        stroke: #321911;
+        stroke-width: 2px;
+        animation: {
+          name: stroke;
+          duration: 5s;
+          delay: 1s;
+          fill-mode: forwards;
+          timing-function: ease-in-out;
+        }
+      }
+    }
+    .scroll {
+      position: absolute;
+      top: calc(73vh - 15vw);
+      left: calc(50vw - 15vw);
+      height: 30vw;
+      width: 30vw;
+      border: 1px white solid;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      animation: opacity, 2s  ease  3.5s  1 normal forwards opacity , 2s ease-in-out 5.5s infinite alternate blink;
+      svg {
+        display: block;
+        width: 28vw;
+        margin: 1vw;
+      }
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg) translate(0px) scale(1.5);
+    }
+    to {
+      transform: rotate(-7deg) translate(16vw,calc( ( -1* ( 50vh - 25vw ) ) + 10vh + 57vw ) ) scale(0.7);
+    }
+  }
+
 }
