@@ -68,9 +68,10 @@ a {
   img {
     position: absolute;
     border-radius: 5%;
-    top: calc(50vh - 256px);
-    left: calc(50vw - 256px);
-    width: 512px;
+    top: calc(50vh - 15vh);
+    left: calc(50vw - 15vh);
+    width: 30vh;
+    height: 30vh;
     opacity: 0;
     animation: {
       name: opacity;
@@ -82,9 +83,9 @@ a {
   #mzcf {
     position: absolute;
     transform: scale(1.5);
-    top: calc(50vh - 80px);
-    left: calc(50vw - 256px);
-    width: 512px;
+    top: calc(50vh - 2.5vh);
+    left: calc(50vw - 16vh);
+    width: 32vh;
     display: block;
     animation: {
       name: rotate;
@@ -108,10 +109,10 @@ a {
   }
   .scroll {
     position: absolute;
-    top: calc(80vh - 80px);
-    left: calc(50vw - 80px);
-    height: 160px;
-    width: 160px;
+    top: calc(83vh - 8vh);
+    left: calc(50vw - 8vh);
+    height: 16vh;
+    width: 16vh;
     border: 1px white solid;
     border-radius: 50%;
     opacity: 0;
@@ -119,8 +120,8 @@ a {
     animation: opacity, 2s  ease  3.5s  1 normal forwards opacity , 2s ease-in-out 5.5s infinite alternate blink;
     svg {
       display: block;
-      width: 128px;
-      margin: 16px;
+      width: 80%;
+      margin: 10%;
     }
   }
 }
@@ -130,7 +131,7 @@ a {
     transform: rotate(0deg) translate(0px) scale(1.5);
   }
   to {
-    transform: rotate(-7deg) translate(95px,210px) scale(0.7);
+    transform: rotate(-7deg) translate(3vw,calc( ( -1 * ( 50vh - 2.5vh ) ) + 58vh )) scale(0.7);
   }
 }
 
@@ -271,6 +272,7 @@ svg {
       top: calc(10vh);
       left: calc(50vw - 35vw);
       width: 70vw;
+      height: 70vw;
       opacity: 0;
       animation: {
         name: opacity;
