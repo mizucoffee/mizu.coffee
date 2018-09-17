@@ -131,7 +131,7 @@ a {
     transform: rotate(0deg) translate(0px) scale(1.5);
   }
   to {
-    transform: rotate(-7deg) translate(8vw, calc( ( -1 * ( 50vh - 2.5vh ) ) + 57vh)) scale(0.7) rotate(-7deg);
+    transform: translate(8vw, calc( ( -1 * ( 50vh - 2.5vh ) ) + 57vh)) scale(0.7) rotate(-7deg);
   }
 }
 
