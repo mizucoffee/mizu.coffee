@@ -165,7 +165,7 @@ a {
 h2 {
   text-align: center;
   text-decoration: underline;
-  margin-top: 32px;
+  padding-top: 32px;
 }
 
 .account {
@@ -310,7 +310,7 @@ svg {
     }
     .scroll {
       position: absolute;
-      top: calc(73vh - 15vw);
+      top: calc( ( 100vh - 10vh + 70vw ) / 2);
       left: calc(50vw - 15vw);
       height: 30vw;
       width: 30vw;
