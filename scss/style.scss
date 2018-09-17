@@ -131,7 +131,7 @@ a {
     transform: rotate(0deg) translate(0px) scale(1.5);
   }
   to {
-    transform: rotate(-7deg) translate(3vw,calc( ( -1 * ( 50vh - 2.5vh ) ) + 58vh )) scale(0.7);
+    transform: rotate(-7deg) translate(8vw, calc( ( -1 * ( 50vh - 2.5vh ) ) + 57vh)) scale(0.7) rotate(-7deg);
   }
 }
 
@@ -332,7 +332,7 @@ svg {
       transform: rotate(0deg) translate(0px) scale(1.5);
     }
     to {
-      transform: rotate(-7deg) translate(16vw,calc( ( -1* ( 50vh - 25vw ) ) + 10vh + 57vw ) ) scale(0.7);
+      transform: translate(19.5vw, calc( ( -1* ( 50vh - 25vw ) ) + 10vh + 55vw)) scale(0.7) rotate(-7deg);
     }
   }
 
