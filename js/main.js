@@ -69,4 +69,17 @@ window.onload = () => {
     }
     if(event.keyCode >= 97 && event.keyCode <= 97 + page_count) jump(event.keyCode - 97)
   })
+
+  let touch
+
+  addEventListener('touchstart', event => {
+    if(inAnimation) return
+    touch = event.touches[0].pageY
+  })
+
+  addEventListener('touchmove', event => {
+    if(inAnimation) return
+    if( touch > event.changedTouches[0].pageY) plus()
+    if( touch < event.changedTouches[0].pageY) minus()
+  })
 }
