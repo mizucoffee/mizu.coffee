@@ -18,15 +18,21 @@ gulp.task('res',() => {
     .pipe(gulp.dest('./dest'))
 })
 
+gulp.task('js',() => {
+  gulp.src('./js/*')
+    .pipe(gulp.dest('./dest'))
+})
+
 gulp.task('html',() => {
   gulp.src('./html/*')
     .pipe(gulp.dest('./dest'))
 })
 
-gulp.task('default', ['clean','scss','res','html'], () => {})
+gulp.task('default', ['clean','scss','res','js','html'], () => {})
 
 gulp.task('watch', ['default'], () => {
   gulp.watch('./scss/*',['scss'])
   gulp.watch('./res/*',['res'])
+  gulp.watch('./js/*',['js'])
   gulp.watch('./html/*',['html'])
 })
