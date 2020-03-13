@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.1",
-    "rimraf": "^2.6.2"
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-load-plugins": "^2.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "rimraf": "^3.0.2"
   }
 }

@@ -3,36 +3,25 @@ const gulp      = require('gulp'),
   rimraf        = require('rimraf'),
   fs            = require('fs')
 
-gulp.task('clean', () => rimraf.sync('build/**/*'))
+const clean = done => rimraf('build/**/*', [], done)
 
-gulp.task('scss', () =>
+const scss = () =>
   gulp.src('./scss/style.scss')
-  .pipe($.plumber())
-  .pipe($.sass())
-  .pipe($.autoprefixer())
-  .pipe(gulp.dest('./dest'))
-)
+    .pipe($.plumber())
+    .pipe($.sass())
+    .pipe($.autoprefixer())
+    .pipe(gulp.dest('./dest'))
 
-gulp.task('res',() => {
+const res = () =>
   gulp.src('./res/*')
     .pipe(gulp.dest('./dest'))
-})
 
-gulp.task('js',() => {
+const js = () =>
   gulp.src('./js/*')
     .pipe(gulp.dest('./dest'))
-})
 
-gulp.task('html',() => {
+const html = () =>
   gulp.src('./html/*')
     .pipe(gulp.dest('./dest'))
-})
 
-gulp.task('default', ['clean','scss','res','js','html'], () => {})
-
-gulp.task('watch', ['default'], () => {
-  gulp.watch('./scss/*',['scss'])
-  gulp.watch('./res/*',['res'])
-  gulp.watch('./js/*',['js'])
-  gulp.watch('./html/*',['html'])
-})
+exports.default = gulp.series(clean, scss, res, js, html)
