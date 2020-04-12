@@ -1,0 +1,58 @@
+<svg viewBox="0 0 2520 280" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="m">
+      <g id="m1" class="vartical"><rect x="50" y="0" width="50" height="280"/></g>
+      <g id="m2" class="horizontal"><rect x="0" y="50" width="300" height="50"/></g>
+      <g id="m3" class="vartical"><rect x="150" y="50" width="50" height="230"/></g>
+      <g id="m4" class="vartical"><rect x="250" y="50" width="50" height="230"/></g>
+    </g>
+    <g id="i">
+      <g id="i1" class="vartical"><rect x="330" y="50" width="50" height="230"/></g>
+    </g>
+    <g id="z">
+      <g id="z1" class="horizontal"><rect x="410" y="50" width="250" height="50"/></g>
+      <g id="z2" class="horizontal"><rect x="460" y="140" width="150" height="50"/></g>
+      <g id="z3" class="horizontal"><rect x="410" y="230" width="250" height="50"/></g>
+    </g>
+    <g id="u">
+      <g id="u1" class="vartical"><rect x="690" y="50" width="50" height="230"/></g>
+      <g id="u2" class="horizontal"><rect x="690" y="230" width="230" height="50"/></g>
+      <g id="u3" class="vartical"><rect x="870" y="50" width="50" height="230"/></g>
+    </g>
+    <g id="dot" class="vartical"><rect x="950" y="230" width="50" height="50"/></g>
+    <g id="c">
+      <g id="c1" class="horizontal"><rect x="1030" y="50" width="230" height="50"/></g>
+      <g id="c2" class="vartical"><rect x="1030" y="50" width="50" height="230"/></g>
+      <g id="c3" class="horizontal"><rect x="1030" y="230" width="230" height="50"/></g>
+    </g>
+    <g id="o">
+      <g id="o1" class="horizontal"><rect x="1290" y="50" width="230" height="50"/></g>
+      <g id="o2" class="vartical"><rect x="1290" y="50" width="50" height="230"/></g>
+      <g id="o3" class="horizontal"><rect x="1290" y="230" width="230" height="50"/></g>
+      <g id="o3" class="vartical"><rect x="1470" y="50" width="50" height="230"/></g>
+      <g id="o3" class="vartical"><rect x="1380" y="140" width="50" height="50"/></g>
+    </g>
+    <g id="f1">
+      <g id="f11" class="horizontal"><rect x="1600" y="50" width="150" height="50"/></g>
+      <g id="f12" class="vartical"><rect x="1600" y="50" width="50" height="230"/></g>
+      <g id="f13" class="horizontal"><rect x="1550" y="140" width="200" height="50"/></g>
+    </g>
+    <g id="f2">
+      <g id="f21" class="horizontal"><rect x="1830" y="50" width="150" height="50"/></g>
+      <g id="f22" class="vartical"><rect x="1830" y="50" width="50" height="230"/></g>
+      <g id="f23" class="horizontal"><rect x="1780" y="140" width="200" height="50"/></g>
+    </g>
+    <g id="e1">
+      <g id="e11" class="horizontal"><rect x="2010" y="50" width="230" height="50"/></g>
+      <g id="e12" class="horizontal"><rect x="2010" y="140" width="230" height="50"/></g>
+      <g id="e13" class="horizontal"><rect x="2010" y="230" width="230" height="50"/></g>
+      <g id="e14" class="vartical"><rect x="2010" y="50" width="50" height="230"/></g>
+      <g id="e15" class="vartical"><rect x="2190" y="50" width="50" height="140"/></g>
+    </g>
+    <g id="e2">
+      <g id="e21" class="horizontal"><rect x="2290" y="50" width="230" height="50"/></g>
+      <g id="e22" class="horizontal"><rect x="2290" y="140" width="230" height="50"/></g>
+      <g id="e23" class="horizontal"><rect x="2290" y="230" width="230" height="50"/></g>
+      <g id="e24" class="vartical"><rect x="2290" y="50" width="50" height="230"/></g>
+      <g id="e25" class="vartical"><rect x="2470" y="50" width="50" height="140"/></g>
+    </g>
+</svg>
