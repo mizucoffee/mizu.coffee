@@ -3,6 +3,6 @@
 ## Build
 
 ```
-$ npm i // or $ yarn
+$ npm i
 $ npx gulp
 ```

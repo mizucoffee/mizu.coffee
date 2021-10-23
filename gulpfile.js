@@ -1,27 +1,31 @@
-const gulp      = require('gulp'),
-  $             = require('gulp-load-plugins')(),
-  rimraf        = require('rimraf'),
-  sass = require('gulp-sass')(require('sass'));
+const gulp = require("gulp");
+const $ = require("gulp-load-plugins")();
+const rimraf = require("rimraf");
+const sass = require("gulp-sass")(require("sass"));
 
-const clean = done => rimraf('build/**/*', [], done)
+function clean(done) {
+  rimraf("dest", [], done);
+}
 
-const scss = () =>
-  gulp.src('./scss/style.scss')
-    .pipe($.plumber())
-    .pipe(sass())
-    .pipe($.autoprefixer())
-    .pipe(gulp.dest('./dest'))
+function res(dir) {
+  dir = dir == "latest" ? "" : dir;
+  return () =>
+    gulp
+      .src([`./${dir}/html/*`, `./${dir}/js/*`, `./${dir}/res/*`])
+      .pipe(gulp.dest(`./dest/${dir}`));
+}
 
-const res = () =>
-  gulp.src('./res/*')
-    .pipe(gulp.dest('./dest'))
+function scss(dir) {
+  dir = dir == "latest" ? "" : dir;
+  return () =>
+    gulp
+      .src(`./${dir}/scss/style.scss`, { allowEmpty: true })
+      .pipe($.plumber())
+      .pipe(sass())
+      .pipe($.autoprefixer())
+      .pipe(gulp.dest(`./dest/${dir}`));
+}
 
-const js = () =>
-  gulp.src('./js/*')
-    .pipe(gulp.dest('./dest'))
-
-const html = () =>
-  gulp.src('./html/*')
-    .pipe(gulp.dest('./dest'))
-
-exports.default = gulp.series(clean, scss, res, js, html)
+exports.default = gulp.series(
+  ...["latest", "v1", "v2", "v3"].map((v) => [res(v), scss(v)])
+);

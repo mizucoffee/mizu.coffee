@@ -1,0 +1,368 @@
+@font-face {
+  font-family: "brother1816-medium";
+  src: url("./brother1816-medium.eot");
+  src: url("./brother1816-medium.eot?#iefix") format("embedded-opentype"), url("./brother1816-medium.woff") format("woff"), url("./brother1816-medium.tff") format("truetype"), url("./brother1816-medium.svg#svgFontName") format("svg");
+}
+
+* {
+  font-family: 'brother1816-medium';
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 200vh;
+  overflow: hidden;
+
+  animation: {
+    name: expansion;
+    duration: 2s;
+    delay: 3.5s;
+    fill-mode: forwards;
+  }
+}
+
+main {
+  height: 200vh;
+  background: linear-gradient(180deg, #2BC0E4, #EAECC6);
+}
+
+@keyframes expansion {
+  from {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  to {
+    max-height: 200vh;
+    overflow: visible;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+@keyframes opacity {
+  0% {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  1% {
+    pointer-events: auto;
+    opacity: 0;
+  }
+
+  100% {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.top {
+  height: 100vh;
+
+  img {
+    position: absolute;
+    border-radius: 5%;
+    top: calc(50vh - 15vh);
+    left: calc(50vw - 15vh);
+    width: 30vh;
+    height: 30vh;
+    opacity: 0;
+
+    animation: {
+      name: opacity;
+      duration: 2s;
+      delay: 3.5s;
+      fill-mode: forwards;
+    }
+  }
+
+  #mzcf {
+    position: absolute;
+    transform: scale(1.5);
+    top: calc(50vh - 2.5vh);
+    left: calc(50vw - 16vh);
+    width: 32vh;
+    display: block;
+
+    animation: {
+      name: rotate;
+      duration: 2s;
+      delay: 3.5s;
+      fill-mode: forwards;
+    }
+
+    path {
+      stroke-dasharray: 2100;
+      stroke-dashoffset: 2100;
+      stroke: #321911;
+      stroke-width: 2px;
+
+      animation: {
+        name: stroke;
+        duration: 5s;
+        delay: 1s;
+        fill-mode: forwards;
+        timing-function: ease-in-out;
+      }
+    }
+  }
+
+  .scroll {
+    position: absolute;
+    top: calc(83vh - 8vh);
+    left: calc(50vw - 8vh);
+    height: 16vh;
+    width: 16vh;
+    border: 1px white solid;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: opacity, 2s ease 3.5s 1 normal forwards opacity, 2s ease-in-out 5.5s infinite alternate blink;
+
+    svg {
+      display: block;
+      width: 80%;
+      margin: 10%;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(0px) scale(1.5);
+  }
+
+  to {
+    transform: translate(7vh, calc((-1 * (50vh - 2.5vh)) + 57vh)) scale(0.7) rotate(-7deg);
+  }
+}
+
+@keyframes stroke {
+  10% {
+    fill: transparent;
+  }
+
+  50% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+
+  80% {
+    fill: #321911;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    fill: #321911;
+    stroke-dashoffset: 0;
+  }
+}
+
+.bottom {
+  padding: calc((100vh - 687px - 32px) / 2) 0;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 32px;
+}
+
+.account {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 16px;
+}
+
+.logo {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  top: 0;
+  left: 0;
+  transition-property: transform, opacity;
+  transition-duration: 1s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+}
+
+.data {
+  position: absolute;
+  width: 128px;
+  font-size: 18px;
+  line-height: 1em;
+  top: calc(128px / 2 - 18px);
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 1s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.mini {
+  font-size: 14px;
+  line-height: 1em;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.e-mail {
+  width: 256px;
+  left: -64px;
+  right: -64px;
+  font-size: 18px;
+  line-height: 1em;
+}
+
+.account:hover .logo {
+  transform: rotateY(540deg);
+  opacity: 0.2;
+}
+
+.account:hover .data {
+  transform: rotateY(720deg);
+  opacity: 1;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto;
+  width: 30vh;
+  padding-top: calc((100vh - 30vh - 48px - 48px) / 2);
+}
+
+.name {
+  text-align: center;
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.account-box {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+svg {
+  width: 256px;
+}
+
+.twitter {
+  fill: #000;
+}
+
+
+@media screen and (max-width: 768px) {
+  main {
+    height: initial;
+    min-height: 200vh;
+  }
+
+  .top {
+    height: 100vh;
+
+    img {
+      position: absolute;
+      top: calc(10vh);
+      left: calc(50vw - 35vw);
+      width: 70vw;
+      height: 70vw;
+      opacity: 0;
+
+      animation: {
+        name: opacity;
+        duration: 2s;
+        delay: 3.5s;
+        fill-mode: forwards;
+      }
+    }
+
+    #mzcf {
+      position: absolute;
+      transform: scale(1.5);
+      top: calc(50vh - 25vw);
+      left: calc(50vw - 30vw);
+      width: 60vw;
+      display: block;
+
+      animation: {
+        name: rotate;
+        duration: 2s;
+        delay: 3.5s;
+        fill-mode: forwards;
+      }
+
+      path {
+        stroke-dasharray: 2100;
+        stroke-dashoffset: 2100;
+        stroke: #321911;
+        stroke-width: 2px;
+
+        animation: {
+          name: stroke;
+          duration: 5s;
+          delay: 1s;
+          fill-mode: forwards;
+          timing-function: ease-in-out;
+        }
+      }
+    }
+
+    .scroll {
+      position: absolute;
+      top: calc((100vh - 10vh + 70vw) / 2);
+      left: calc(50vw - 15vw);
+      height: 30vw;
+      width: 30vw;
+      border: 1px white solid;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      animation: opacity, 2s ease 3.5s 1 normal forwards opacity, 2s ease-in-out 5.5s infinite alternate blink;
+
+      svg {
+        display: block;
+        width: 28vw;
+        margin: 1vw;
+      }
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg) translate(0px) scale(1.5);
+    }
+
+    to {
+      transform: translate(19.5vw, calc((-1* (50vh - 25vw)) + 10vh + 55vw)) scale(0.7) rotate(-7deg);
+    }
+  }
+
+}
