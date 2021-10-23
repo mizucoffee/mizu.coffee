@@ -8,22 +8,20 @@ function clean(done) {
 }
 
 function res(dir) {
-  dir = dir == "latest" ? "" : dir;
   return () =>
     gulp
       .src([`./${dir}/html/*`, `./${dir}/js/*`, `./${dir}/res/*`])
-      .pipe(gulp.dest(`./dest/${dir}`));
+      .pipe(gulp.dest(`./dest/${dir == "latest" ? "" : dir}`));
 }
 
 function scss(dir) {
-  dir = dir == "latest" ? "" : dir;
   return () =>
     gulp
       .src(`./${dir}/scss/style.scss`, { allowEmpty: true })
       .pipe($.plumber())
       .pipe(sass())
       .pipe($.autoprefixer())
-      .pipe(gulp.dest(`./dest/${dir}`));
+      .pipe(gulp.dest(`./dest/${dir == "latest" ? "" : dir}`));
 }
 
 exports.default = gulp.series(
