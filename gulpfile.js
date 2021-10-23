@@ -1,14 +1,14 @@
 const gulp      = require('gulp'),
   $             = require('gulp-load-plugins')(),
   rimraf        = require('rimraf'),
-  fs            = require('fs')
+  sass = require('gulp-sass')(require('sass'));
 
 const clean = done => rimraf('build/**/*', [], done)
 
 const scss = () =>
   gulp.src('./scss/style.scss')
     .pipe($.plumber())
-    .pipe($.sass())
+    .pipe(sass())
     .pipe($.autoprefixer())
     .pipe(gulp.dest('./dest'))
 
